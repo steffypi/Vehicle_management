@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="my-5 px-4 text-secondary">
+<a href="{% url 'user:supercreatevehicle' %}" class="btn btn-primary btn-small">create</a>
+
+ <ol>
+{% for vehicle in vehicle %}
+  <li>Vehicle details</li>
+     <ul>
+     <li>Vehicle Number:{{vehicle.vehicle_number}}</li>
+     <li>Vehicle type:{{vehicle.vehicle_type}}wheler</li>
+      <li>Vehicle Model:{{vehicle.vehicle_model}}</li>
+         <li>Vehicle Description:{{vehicle.vehicle_description}}</li>
+         <li><a href="{% url 'user:adminvehicleupdateview' vehicle.id %}" class="btn btn-danger btn-small">edit</a></li>
+         <br>
+         <li><a href="{% url 'user:superdeletevehicleview' vehicle.id %}" class="btn btn-danger btn-small">delete</a></li>
+
+     </ul>
+    {% endfor %}
+     <br>
+    </ol>
+</div>
+{% endblock %}

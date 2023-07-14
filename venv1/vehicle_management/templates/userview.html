@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="my-5 px-4 text-secondary">
+ <ol>
+{% for vehicle in vehicles %}
+  <li>Vehicle details</li>
+     <ul>
+     <li>Vehicle Number:{{vehicle.vehicle_number}}</li>
+     <li>Vehicle Type:{{vehicle.vehicle_type}}wheler</li>
+      <li>Vehicle Model:{{vehicle.vehicle_model}}</li>
+         <li>Vehicle Decription:{{vehicle.vehicle_description}}</li>
+         <li><a href="{% url 'user:editview' i.id %}" class="btn btn-danger btn-small">edit</a></li>
+     </ul>
+    {% endfor %}
+    </ol>
+</div>
+{% endblock %}

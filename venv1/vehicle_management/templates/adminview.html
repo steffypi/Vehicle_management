@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="my-5 px-4 text-secondary">
+ <ol>
+{% for vehicle in vehicle %}
+  <li>Vehicle details</li>
+     <ul>
+     <li>Vehicle Number:{{vehicle.vehicle_number}}</li>
+     <li>Vehicle Type:{{vehicle.vehicle_type}}wheler</li>
+      <li>Vehicle Model:{{vehicle.vehicle_model}}</li>
+         <li>Vehicle description:{{vehicle.vehicle_description}}</li>
+         <li><a href="{% url 'user:adminvehicleupdateview' vehicle.id %}" class="btn btn-secondary btn-small">edit</a></li>
+     </ul>
+    {% endfor %}
+    </ol>
+</div>
+{% endblock %}
